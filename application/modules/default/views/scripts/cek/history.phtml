@@ -1,0 +1,83 @@
+
+<pre>
+
+<center><h4>Riwayat Pembayaran</h4></center>
+</pre>
+
+<?php
+
+$databaseHost = 'localhost';
+$databaseName = 'data';
+$databaseUsername = 'root';
+$databasePassword = '';
+
+
+$mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
+
+$query = mysqli_query($mysqli,"SELECT * FROM bayar ORDER BY id ASC");
+
+?>
+
+<div class="table-wrapper">
+    <table class="alt">
+		<thead>
+		  <tr>
+			<th>No.</th>
+		    <th>Nama</th>
+			<th>No. Virtual Account</th>													
+			<th>Total</th>
+			<th>Tgl. Lunas</th>
+		  </tr>
+		</thead>
+		<tbody>
+											
+		<?php if(mysqli_num_rows($query)>0){ ?>
+        <?php   
+                $no = 1;
+                while($data = mysqli_fetch_array($query)){
+        ?>
+		<?php 			
+		$tahuns = substr($data["lunas"], 0, 4);
+        $bulans = substr ($data["lunas"], 4, 2);
+        $haris = substr($data["lunas"], 6, 2);
+        $jams = substr ($data["lunas"], 8, 2);
+        $menits = substr ($data["lunas"], 10, 2);
+        $detiks = substr ($data["lunas"], 12, 2);
+        
+        $totals = $data["total"];
+        $totals1 = substr($totals, 0, 3);
+        $totals2 = substr($totals, 3, 3);
+        
+        $totalss = substr($totals, 1, 5);
+        $totalss1 = substr($totalss, 0, 2);
+        $totalss2 = substr($totalss, 2, 3);
+        
+        
+        $digits = substr($totals, 0, 1);
+        
+        $namas = $data["nama"];
+        $text = ucwords(strtolower($namas));
+        ?>
+											
+		      <tr>
+				<td><?php echo $no ?></td>
+				<td><?php echo ucwords ($text);?></td>
+				<td><?php echo $data["nova"];?></td>
+				<td><?php echo "Rp"; 
+													
+													if ($digits == 0) {
+													    echo $totalss1; echo "."; echo $totalss2;
+													}else {
+													    echo $totals1; echo "."; echo $totals2;
+													}?></td>
+				<td><?php echo $haris; echo "/"; echo $bulans; echo "/"; echo $tahuns; echo" - "; echo $jams; echo":"; echo $menits; echo":"; echo $detiks;?></td>
+			  </tr>
+
+							
+		</tbody>
+        <?php $no++; } ?>
+        <?php } ?>
+										
+	</table><br><br><br><br><br><br><br><br><br><br>
+</div>
+

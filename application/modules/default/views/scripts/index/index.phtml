@@ -1,0 +1,68 @@
+<?php $session = new Zend_Session_Namespace('data');?>
+
+<!-- Heading -->
+<div id="heading" >
+	<h1>LOGIN</h1>
+</div>
+
+<!-- Main -->
+<section id="main" class="wrapper">
+<div class="inner">
+    <div class="content">
+
+	<!-- Elements -->
+	<div class="row">
+						
+							
+				
+						
+        	<form method="get" action="<?php echo $this->url(array('controller'=>'index', 'action'=>'admin')); ?>" class="mx-auto" >
+        									
+        	   <div class="row gtr-uniform">
+        			<div class="col-sm-12"><div class="form-group"><h4>masukkan username dan password</h4></div></div>					
+            		<div class="col-sm-12">
+            			<div class="form-group">
+                              <h6>Username</h6>
+                              <input type="text" name="username" class="form-control" placeholder="Username" required="required" autocomplete="off">
+                        </div>
+                        
+                        <div class="form-group">
+                              <label class="sr-only">Nomor Virtual Account Pelanggan</label>
+                              <h6>Password</h6>
+                              <input type="password" name="password" class="form-control" placeholder="Password" required="required" autocomplete="off">
+                        </div>
+                           
+                            
+                        <ul class="actions">
+            			     <li><input type="submit" value="Login" class="primary" /></li>
+            	             <li><input type="reset" value="Reset" /></li>
+            		    </ul>
+            		</div>
+            		
+            		<div class="col-sm-12"><div class="form-group"></div></div>
+        											
+        						
+        		</div>
+        	</form>
+									
+
+							
+								
+								
+
+							
+	</div>
+	</div>
+</div>
+</section>
+
+
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+		

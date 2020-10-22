@@ -1,0 +1,175 @@
+<?php
+
+
+include 'inq_test.php';
+
+$iso=$res_srv;
+include 'parsing.php';
+
+error_reporting(E_ALL ^ E_DEPRECATED);
+
+
+// echo "Data 48  : ";
+// print_r ($data[48]); echo "\n";
+// echo "No Virtual Account  : ";
+// print_r ($no_va);echo "\n";
+// echo "Nama  : ";
+// print_r ($nama);echo "\n";
+?>
+
+
+
+<?php echo "<br>"?>;
+
+
+
+
+
+
+
+				<div class="table-wrapper">
+				<?php 
+    if($data[39] == 00) {
+    ?>
+				<header>
+<center><h1>Data Peserta</h1></center><br>
+</header>
+										<table>
+
+											<tbody>
+											
+												<tr>
+													<td>Nama</td>
+													<td><?php print_r ($nama);?></td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Nama Badan Usaha</td>
+													<td><?php print_r ($nbu);?></td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Nomor Virtual Account</td>
+													<td><?php print_r ($no_va);?></td>
+													<td></td>
+												</tr>
+											
+												<tr>
+													<td>Nomor Kartu Peserta</td>
+													<td><?php print_r ($nkp);?></td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Jenis Tagihan</td>
+													<td><?php print_r ($kjt);?></td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Flag Jenis Tagihan</td>
+													<td><?php print_r ($fjt);?></td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Kode Hit Denda</td>
+													<td><?php print_r ($khd);?></td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Kode Asal Premi</td>
+													<td><?php print_r ($kap);?></td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Kode PKS</td>
+													<td><?php print_r ($kpks);?></td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Tagihan Denda</td>
+													<td><?php echo "Rp"; 
+													
+													if ($digitt == 0) {
+													    echo $ntdd1; echo "."; echo $ntdd2;
+													}else {
+													    echo $ntd1; echo "."; echo $ntd2;
+													}?></td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Biaya Admin</td>
+													<td><?php echo "Rp"; print_r ($ba);?></td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Total</td>
+													<td><?php echo "Rp"; 
+													
+													if ($digit == 0) {
+													    echo $totall1; echo "."; echo $totall2;
+													}else {
+													    echo $total1; echo "."; echo $total2;
+													}?></td>
+													<td></td>
+												</tr>
+												  
+											
+											</tbody>
+                                        
+										
+                
+              
+										</table>
+									
+											
+											
+            
+            
+                                          
+										
+									</div>
+							<div class="row">	
+							
+							<div class="col-1"></div>
+							<div class="col-1"></div>
+							<div class="col-1"></div>
+							<div class="col-1"></div>
+							<div class="col-1"></div>
+									<div class="col-1"><a><form method="get" action="<?php echo $this->url(array('controller'=>'cek', 'action' => 'bayar'));?>">
+             <c><input type="submit" value="Bayar" class="primary" /></form></a> </div>
+            
+            <div class="col-1">
+             <a href="<?php echo $this->url(array('controller'=>'cek', 'action' => 'index'));?>">
+             <center><button type="button" class="primary" />Kembali</center></a></div> 
+             
+             <div class="col-1"></div>
+             <div class="col-1"></div>
+             <div class="col-1"></div>
+             <div class="col-1"></div>
+             <div class="col-1"></div>
+             
+             </div>	
+             
+             <br>
+             
+									
+										<?php 
+    }
+    else{
+        ?> <center><h1>
+        DATA TIDAK DITEMUKAN
+        </h1></center>
+        <br><br><br><br><br>
+        
+         <div class="col-12">
+             
+             <a href="<?php echo $this->url(array('controller'=>'cek', 'action' => 'index'));?>">
+             <center><button type="button" class="primary" />Kembali</center></a>
+             </div>
+        
+        <br><br><br><br><br><br><br>
+        <?php 
+    }
+    ?>
+
+    
+</pre>

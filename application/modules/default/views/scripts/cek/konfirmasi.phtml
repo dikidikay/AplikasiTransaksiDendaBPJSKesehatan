@@ -1,0 +1,41 @@
+<?php error_reporting(E_ALL ^ E_DEPRECATED); 
+
+include 'denda.php';
+$kn = $_GET['nova'];
+?>
+
+<div class="inner">
+<div class="content">
+
+<pre>
+				<div class="table-wrapper">
+				<header>
+<center><h1>Konfirmasi</h1></center>
+</header>
+										<table>
+<!-- 											<thead> -->
+<!-- 												<tr>													 -->
+<!-- 													<th>Nomor Virtual Account</th>													 -->
+<!-- 												</tr> -->
+<!-- 											</thead> -->
+											<tbody>
+												<tr>
+													<td>Nomor Virtual Account</td>
+													<td><?php echo $kn;?></td>
+<!-- 													<td></td> -->
+												</tr>					
+										</table>
+									</div>
+					</div>
+				</div>                     
+             <form method="get" action="<?php echo $this->url(array('controller'=>'cek', 'action' => 'hasil'));?>">
+             <center><input type="submit" value="Submit" class="primary" /></center></a>
+                                                    
+                                            
+
+
+
+
+
+
+

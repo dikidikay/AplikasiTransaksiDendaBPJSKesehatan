@@ -1,0 +1,169 @@
+<?php
+include 'payment.php';
+$iso=$res_srv;
+include 'parsingg.php';
+error_reporting(E_ALL ^ E_DEPRECATED);
+?>
+<?php echo "<br>"?>;			
+<div class="table-wrapper">
+<header>
+<center><h1>Transaksi Berhasil</h1></center>
+</header>
+										<table>
+
+											<tbody>
+											
+												<tr>
+													<td>Nama</td>
+													<td><?php print_r ($namah);?></td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Nama Badan Usaha</td>
+													<td><?php print_r ($nbuh);?></td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Nomor Virtual Account</td>
+													<td><?php print_r ($no_vah);?></td>
+													<td></td>
+												</tr>
+											
+												<tr>
+													<td>Nomor Kartu Peserta</td>
+													<td><?php print_r ($nkph);?></td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Jenis Tagihan</td>
+													<td><?php print_r ($kjth);?></td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Flag Jenis Tagihan</td>
+													<td><?php print_r ($fjth);?></td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Kode Hit Denda</td>
+													<td><?php print_r ($khdh);?></td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Kode Asal Premi</td>
+													<td><?php print_r ($kaph);?></td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Kode PKS</td>
+													<td><?php print_r ($kpksh);?></td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Tagihan Denda</td>
+													<td><?php echo "Rp"; 
+													
+													if ($digitth == 0) {
+													    echo $ntddh1; echo "."; echo $ntddh2;
+													}else {
+													    echo $ntdh1; echo "."; echo $ntdh2;
+													}?></td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Biaya Admin</td>
+													<td><?php echo "Rp"; print_r ($bah);?></td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Total</td>
+													<td><?php echo "Rp"; 
+													
+													if ($digith == 0) {
+													    echo $totallh1; echo "."; echo $totallh2;
+													}else {
+													    echo $totalh1; echo "."; echo $totalh2;
+													}?></td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Kode Bayar Denda</td>
+													<td><?php print_r ($kbdh);?></td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>JPA REFF</td>
+													<td><?php print_r ($jpah);?></td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Tanggal Lunas</td>
+													<td><?php print_r ($harih); echo "/"; print_r($bulanh); echo "/"; print_r($tahunh); echo " "; echo"-";echo" "; print_r($jamh); echo ":"; print_r($menith); echo":"; print_r($detikh);?></td>
+													<td></td>
+												</tr>
+											</tbody>
+										</table>
+									<div class="row">	
+							
+							<div class="col-1"></div>
+							<div class="col-1"></div>
+							<div class="col-1"></div>
+							<div class="col-1"></div>
+							<div class="col-1"></div>
+									<div class="col-1"><a><form method="get" action="<?php echo $this->url(array('controller'=>'cek', 'action' => 'history'));?>">
+             <c><input type="submit" value="Riwayat" class="primary" /></form></a> </div>
+            
+            <div class="col-1">
+             <a href="<?php echo $this->url(array('controller'=>'cek', 'action' => 'index'));?>">
+             <center><button type="button" class="primary" />Kembali</center></a></div> 
+             
+             <div class="col-1"></div>
+             <div class="col-1"></div>
+             <div class="col-1"></div>
+             <div class="col-1"></div>
+             <div class="col-1"></div>
+             
+             </div>	
+             
+      
+            
+            </div><br>
+									
+									
+							
+<?php 
+
+
+
+$databaseHost = 'localhost';
+$databaseName = 'data';
+$databaseUsername = 'root';
+$databasePassword = '';
+
+
+$mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
+
+$result = mysqli_query($mysqli,"SELECT * FROM bayar");
+$idd = mysqli_num_rows($result);
+
+$sql = "INSERT INTO bayar (nova,nama,nbu,nkp,ntd,ba,total,flag,kjt,khd,kap,kpks,kbd,jpa,lunas) VALUES ('$no_vah','$namah','$nbuh','$nkph','$ntdh','$bah','$totalh','$fjth','$kjth','$khdh','$kaph','$kpksh', '$kbdh', '$jpah', '$lunash')";
+$query = mysqli_query($mysqli,$sql);
+// $test = $conn->query("INSERT INTO data48 (data) VALUES ($data48)");
+// if ($query === TRUE) {
+//     echo "mantap";
+// } else {
+//     mysqli_close($mysqli);
+// }
+
+// if ($query === TRUE) {
+//     echo "New record created successfully";
+// } else {
+//     mysqli_close($mysqli);
+// }
+
+?>
+
+
+
+
+

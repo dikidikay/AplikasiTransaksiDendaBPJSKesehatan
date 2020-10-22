@@ -1,0 +1,64 @@
+<?php 
+
+
+
+
+
+echo $this->doctype(); ?>
+
+<header id="header">
+				<a class="logo">Arion</a>
+				<nav>
+					<a href="#menu">Menu</a>
+				</nav>
+			</header>
+
+		
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="<?php echo $this->url(array('controller'=>'index', 'action'=>'admin'));?>">Beranda</a></li>
+				
+					
+<!-- 					<li><a href="#cta">Tentang</a></li> -->
+				</ul>
+			</nav>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+    <?php echo $this->headLink()->prependStylesheet($this->baseUrl().'/css/main.css'); ?> 
+     <?php echo $this->headScript()->prependFile($this->baseUrl().'/js/main.js'); ?>
+     <?php echo $this->headScript()->prependFile($this->baseUrl().'/js/util.js'); ?>
+     <?php echo $this->headScript()->prependFile($this->baseUrl().'/js/browser.min.js'); ?>
+     <?php echo $this->headScript()->prependFile($this->baseUrl().'/js/breakpoints.min.js'); ?>
+     <?php echo $this->headScript()->prependFile($this->baseUrl().'/js/jquery.min.js'); ?>
+     <?php echo $this->headScript()->prependFile($this->baseUrl().'/fonts/fontawesome.webfont.eot'); ?>
+     <?php echo $this->headScript()->prependFile($this->baseUrl().'/fonts/fontawesome.webfont.svg'); ?>
+     <?php echo $this->headScript()->prependFile($this->baseUrl().'/fonts/fontawesome.webfont.ttf'); ?>
+     <?php echo $this->headScript()->prependFile($this->baseUrl().'/fonts/fontawesome.webfont.woff'); ?>
+     <?php echo $this->headScript()->prependFile($this->baseUrl().'/fonts/fontawesome.webfont.woff2'); ?>
+     <?php echo $this->headScript()->prependFile($this->baseUrl().'/fonts/FontAwesome.otf'); ?>
+     
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div id="content">
+    
+    <?php echo $this->layout()->content; ?>
+</div>
+</body>
+
+ <!-- Footer -->
+<footer id="footer">
+	
+	
+	   <div class="copyright">
+		  <a>2020</a>
+	   </div>
+	
+</footer>
+
+
+
+
+</html>

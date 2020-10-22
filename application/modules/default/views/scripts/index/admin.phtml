@@ -1,0 +1,83 @@
+<?php $session = new Zend_Session_Namespace('data');?>
+ <?php 
+ error_reporting(0);
+$databaseHost = 'localhost';
+$databaseName = 'data';
+$databaseUsername = 'root';
+$databasePassword = '';
+
+$mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
+
+$username = $_GET['username'];
+$password = $_GET['password'];
+
+$sql = "SELECT count(*) as cntUser from user where username='$username' and password= '$password'";
+$result = mysqli_query($mysqli, $sql);
+$sql3 = "SELECT * from user where username='$username' and password= '$password'";
+$result3 = mysqli_query($mysqli, $sql3);
+$row3 = mysqli_fetch_array($result3);
+$row = mysqli_fetch_array($result);
+$count = $row['cntUser'];  
+
+if($count <= 0){
+    header('Refresh:0.00001;  index');
+    ?><script>alert('Silahkan login kembali!');</script><?php
+        }else{
+            ?>
+            
+            <section id="banner">
+<div class="inner">
+		<h1>Arion</h1>
+				
+				</div>
+			
+				        </section>
+
+				        <!-- Highlights -->
+				        <section class="wrapper">
+                        <center><a href="<?php echo $this->url(array('controller'=>'cek', 'action' => 'index'));?>"><img src="<?php echo $this->baseURL();?>/img/bpjs.png " alt="bpjs" width="300" height="200"/></a>
+                        <br/><br/>
+                        <div class="inner"><h4>Cek Denda</h4></div>
+                        </center>
+                        
+								                        </section>
+<hr>
+								                        <!-- CTA -->
+								                        
+								                         <section id="cta" class="wrapper">
+								                        <div class="inner">
+								                        <button type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-log-out"></span><h2><a href="<?php echo $this->url(array('controller'=>'cek', 'action'=>'history'));?>">Riwayat Pembayaran</a></h2></button>
+								                        
+								                        </div>
+								                     
+								                        
+								                        </section>
+								                        
+								                        
+								                        <hr>
+								                        
+								                        
+								                        <section id="cta" class="wrapper">
+								                        <div class="inner">
+								                        <h2>Tentang Arion</h2>
+								                        <p>Arion merupakan platform yang dapat memberikan kemudahan dalam pengecekan dan pembayaran denda BPJS Kesehatan.</p>
+								                        </div>
+								                        <button type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-log-out"></span><a href="<?php echo $this->url(array('controller'=>'index', 'action'=>'index'));?>">Logout</a> 
+        </button>
+								                        
+								                        </section>
+                    
+            		  <?php
+                    }
+                    ?>
+               
+            
+            	
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+                        
