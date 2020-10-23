@@ -280,7 +280,7 @@ class Zend_Cache_Frontend_Page extends Zend_Cache_Core
             if ($this->_specificOptions['debug_header']) {
                 return 'DEBUG HEADER : This is a cached page !';
             }
-            echo $data;
+            return $data;
             if ($doNotDie) {
                 return true;
             }
