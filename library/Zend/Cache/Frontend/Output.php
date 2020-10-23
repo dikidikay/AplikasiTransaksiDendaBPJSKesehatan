@@ -97,9 +97,6 @@ class Zend_Cache_Frontend_Output extends Zend_Cache_Core
             Zend_Cache::throwException('use of end() without a start()');
         }
         $this->save($data, $id, $tags, $specificLifetime, $priority);
-        if ($echoData) {
-            return($data);
-        }
     }
 
 }
