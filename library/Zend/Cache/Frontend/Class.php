@@ -247,7 +247,7 @@ class Zend_Cache_Frontend_Class extends Zend_Cache_Core
             }
         }
 
-        echo $output;
+        return $output;
         return $return;
     }
 
