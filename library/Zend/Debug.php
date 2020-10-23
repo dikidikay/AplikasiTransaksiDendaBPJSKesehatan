@@ -105,7 +105,7 @@ class Zend_Debug
         }
 
         if ($echo) {
-            return($output);
+           return($output);
         }
         return $output;
     }
