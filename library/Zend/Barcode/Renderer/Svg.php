@@ -309,7 +309,7 @@ class Zend_Barcode_Renderer_Svg extends Zend_Barcode_Renderer_RendererAbstract
     {
         $this->draw();
         header("Content-Type: image/svg+xml");
-        echo $this->_resource->saveXML();
+        return $this->_resource->saveXML();
     }
 
     /**
