@@ -109,7 +109,7 @@ class Zend_Cache_Frontend_Function extends Zend_Cache_Core
             $this->save($data, $id, $tags, $specificLifetime, $priority);
         }
 
-        echo $output;
+        return $output;
         return $return;
     }
 
