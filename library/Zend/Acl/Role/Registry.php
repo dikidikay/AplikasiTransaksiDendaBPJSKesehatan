@@ -209,10 +209,7 @@ class Zend_Acl_Role_Registry
             return $inherits;
         }
 
-        foreach ($this->_roles[$roleId]['parents'] as $parentId => $parent) {
-            if ($this->inherits($parentId, $inheritId)) {
-                return true;
-            }
+        
         }
 
         return false;
