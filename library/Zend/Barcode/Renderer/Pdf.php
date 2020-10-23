@@ -106,7 +106,7 @@ class Zend_Barcode_Renderer_Pdf extends Zend_Barcode_Renderer_RendererAbstract
     {
         $this->draw();
         header("Content-Type: application/pdf");
-        echo $this->_resource->render();
+        return $this->_resource->render();
     }
 
     /**
