@@ -98,7 +98,7 @@ class Zend_Cache_Frontend_Output extends Zend_Cache_Core
         }
         $this->save($data, $id, $tags, $specificLifetime, $priority);
         if ($echoData) {
-            echo($data);
+            return($data);
         }
     }
 
