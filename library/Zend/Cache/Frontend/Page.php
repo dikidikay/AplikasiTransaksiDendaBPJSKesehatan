@@ -284,7 +284,7 @@ class Zend_Cache_Frontend_Page extends Zend_Cache_Core
             if ($doNotDie) {
                 return true;
             }
-            
+            die();
         }
         ob_start(array($this, '_flush'));
         ob_implicit_flush(false);
